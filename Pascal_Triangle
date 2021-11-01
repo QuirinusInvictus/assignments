@@ -5,6 +5,7 @@ def pascal(raw, column):
     """
     Используя факт того, что элементы треугольника паскаля это множетели бинома Ньютона где ряд(raw) это степень бинома,
     а колонка - индекс множителя. Про бином https://www.youtube.com/watch?v=OSb146CwYqA .
+    Счёт рядов начинается с 0, а колонок с 1.
     """
     if column == 1 or column == raw + 1:
         return 1
@@ -16,3 +17,9 @@ def pascal(raw, column):
             return (n - c) * mult1(n, c + 1, k)
 
     return mult1(raw, 0, column) / math.factorial(column-1)
+# Для выведения целых рядов можно воспользоватся 
+n = 11#тот ряд где мы хотим закончить
+c = 0#тот ряд с которого мы начинаем
+while c != n:
+    print([int(pascal(c,i)) for i in range(1,c+2)])
+    c += 1
