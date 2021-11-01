@@ -1,0 +1,18 @@
+import math
+
+
+def pascal(raw, column):
+    """
+    Используя факт того, что элементы треугольника паскаля это множетели бинома Ньютона где ряд(raw) это степень бинома,
+    а колонка - индекс множителя. Про бином https://www.youtube.com/watch?v=OSb146CwYqA .
+    """
+    if column == 1 or column == raw + 1:
+        return 1
+
+    def mult1(n, c, k):
+        if c == k-1:
+            return 1
+        else:
+            return (n - c) * mult1(n, c + 1, k)
+
+    return mult1(raw, 0, column) / math.factorial(column-1)
