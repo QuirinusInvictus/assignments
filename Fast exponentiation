@@ -1,4 +1,4 @@
-def fast_(numb, ind):
+def fast_expon(numb, ind):
     def even(n):
         return not(n%2) #fine
     if ind == 0:
