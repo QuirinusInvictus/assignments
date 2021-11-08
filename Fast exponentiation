@@ -7,4 +7,3 @@ def fast_(numb, ind):
         return 2**fast_(numb, ind/2)
     else:
         return numb * fast_(numb, ind-1)
-print(fast_(7,4))
