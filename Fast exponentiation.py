@@ -4,6 +4,6 @@ def fast_expon(numb, ind):
     if ind == 0:
         return 1
     elif even(ind):
-        return 2**fast_expon(numb, ind/2)
+        return fast_expon(numb, ind/2)**2
     else:
         return numb * fast_expon(numb, ind-1)
